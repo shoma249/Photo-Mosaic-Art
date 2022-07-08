@@ -1,5 +1,7 @@
-import cv2
+import tkinter as tk
 
-filename = "lena.jpg"
-gry = cv2.imread(filename, 0)
-cv2.imwrite('gray.jpg', gry)
+main_win = tk.Tk()
+main_win.title("テスト用ウィンドウ")
+main_win.geometry("400x300")
+
+main_win.mainloop()
