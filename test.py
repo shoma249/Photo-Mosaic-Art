@@ -1,7 +1,25 @@
-import tkinter as tk
+from tkinter import *
+from tkinter import ttk
 
-main_win = tk.Tk()
-main_win.title("テスト用ウィンドウ")
-main_win.geometry("400x300")
+root = Tk()
+root.title('My First App')
 
-main_win.mainloop()
+# ウィジェットの作成
+frame1 = ttk.Frame(root, padding=16)
+label1 = ttk.Label(frame1, text='Your name')
+t = StringVar()
+entry1 = ttk.Entry(frame1, textvariable=t)
+button1 = ttk.Button(
+    frame1,
+    text='OK',
+    command=lambda: print('Hello, %s.' % t.get())
+)
+
+# レイアウト
+frame1.pack()
+label1.pack(side=LEFT)
+entry1.pack(side=LEFT)
+button1.pack(side=LEFT)
+
+# ウィンドウの表示開始
+root.mainloop()
